@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TPG Tribu">
+  <rect width="64" height="64" rx="14" fill="#10212b" />
+  <path d="M18 40c5-12 10-18 14-18s9 6 14 18" fill="none" stroke="#e6b17e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="22" cy="24" r="4" fill="#86c5da" />
+  <circle cx="42" cy="24" r="4" fill="#f2d16b" />
+  <circle cx="32" cy="16" r="4" fill="#f08a5d" />
+</svg>

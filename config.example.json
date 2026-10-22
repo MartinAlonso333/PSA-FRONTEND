@@ -1,0 +1,53 @@
+{
+  "tribeName": "Tribu A",
+  "mvpName": "MVP integrado",
+  "frontendUrl": "https://tribu-a.example.com",
+  "allowedOrigin": "https://tribu-a.example.com",
+  "backends": [
+    {
+      "name": "Squad 1 backend",
+      "purpose": "Dominio A",
+      "baseUrl": "https://squad-1.example.com",
+      "healthPath": "/api/health",
+      "docsPath": "/docs",
+      "openapiPath": "/v3/api-docs"
+    },
+    {
+      "name": "Squad 3 backend",
+      "purpose": "Dominio B",
+      "baseUrl": "https://squad-3.example.com",
+      "healthPath": "/api/health",
+      "docsPath": "/docs",
+      "openapiPath": "/v3/api-docs"
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Vision integrada",
+      "detail": "Una sola narrativa de producto, MVP y fuera de alcance."
+    },
+    {
+      "title": "Modelo de dominio",
+      "detail": "Conceptual, compartido y sin vocabulario tecnico."
+    },
+    {
+      "title": "Frontend desplegado",
+      "detail": "Una URL publica que presenta el estado de la tribu."
+    },
+    {
+      "title": "Backends accesibles",
+      "detail": "Ambos servicios responden `GET /api/health` por HTTPS."
+    },
+    {
+      "title": "CORS verificado",
+      "detail": "Los dos backends aceptan el origin del frontend."
+    },
+    {
+      "title": "Demo lista",
+      "detail": "Smoke test y guion de demostracion antes de exponer."
+    }
+  ],
+  "demo": {
+    "notes": "Antes de mostrar, correr el smoke de produccion y verificar que las dos APIs sigan vivas."
+  }
+}

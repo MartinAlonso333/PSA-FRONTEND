@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10212b" />
+    <title>TPG Tribu</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <header class="masthead">
+        <div class="masthead__copy">
+          <p class="eyebrow">TPG Tribu</p>
+          <h1 id="tribe-title">Tribu A</h1>
+          <p id="tribe-lead" class="lead">MVP integrado entre dos squads y un frontend web comun.</p>
+        </div>
+
+        <div class="masthead__actions">
+          <button id="refresh-button" class="button button--primary" type="button">
+            <span class="button__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <path d="M20 12a8 8 0 1 1-2.35-5.65" />
+                <path d="M20 4v6h-6" />
+              </svg>
+            </span>
+            <span>Refresh</span>
+          </button>
+          <div class="masthead__status">
+            <span id="overall-pill" class="pill">Cargando</span>
+            <span id="last-updated" class="meta">Sin datos aun</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard" aria-live="polite">
+        <section class="panel panel--wide">
+          <div id="summary"></div>
+        </section>
+
+        <section class="panel">
+          <div id="backends"></div>
+        </section>
+
+        <section class="panel">
+          <div id="contract"></div>
+        </section>
+
+        <section class="panel panel--wide">
+          <div id="checklist"></div>
+        </section>
+      </main>
+
+      <footer id="footnote" class="footnote"></footer>
+    </div>
+
+    <script>
+      const script = document.createElement("script");
+      script.src = `./app.js?v=${Date.now()}`;
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>

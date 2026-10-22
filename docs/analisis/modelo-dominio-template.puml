@@ -1,0 +1,21 @@
+@startuml
+' Scaffold PlantUML para el modelo de dominio de la tribu.
+' Reemplazar los nombres por conceptos reales del sistema.
+
+class "Concepto principal" as ConceptoPrincipal {
+  nombre
+  estado
+}
+
+class "Concepto relacionado" as ConceptoRelacionado {
+  descripcion
+}
+
+class "Regla de negocio" as ReglaNegocio {
+  criterio
+}
+
+ConceptoPrincipal "1" -- "0..*" ConceptoRelacionado : relaciona
+ConceptoPrincipal ..> ReglaNegocio : aplica
+
+@enduml

@@ -1,0 +1,53 @@
+{
+  "tribeName": "Tribu B",
+  "mvpName": "MVP integrado",
+  "frontendUrl": "https://two026-1c-tpg-tribu-b.onrender.com",
+  "allowedOrigin": "https://two026-1c-tpg-tribu-b.onrender.com",
+  "backends": [
+    {
+      "name": "Backend de Marketing",
+      "purpose": "Gestión de campañas y leads",
+      "baseUrl": "https://two026-1c-tpg-squad-1-tv35.onrender.com",
+      "healthPath": "/api/health",
+      "docsPath": "/docs",
+      "openapiPath": "/v3/api-docs"
+    },
+    {
+      "name": "Backend de Ventas",
+      "purpose": "Gestión de oportunidades, clientes y productos",
+      "baseUrl": "https://two026-1c-tpg-squad-3.onrender.com",
+      "healthPath": "/api/health",
+      "docsPath": "/docs",
+      "openapiPath": "/v3/api-docs"
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Vision integrada",
+      "detail": "Una sola narrativa de producto, MVP y fuera de alcance."
+    },
+    {
+      "title": "Modelo de dominio",
+      "detail": "Conceptual, compartido y sin vocabulario tecnico."
+    },
+    {
+      "title": "Frontend desplegado",
+      "detail": "Una URL publica que presenta el estado de la tribu."
+    },
+    {
+      "title": "Backends accesibles",
+      "detail": "Ambos servicios responden `GET /api/health` por HTTPS."
+    },
+    {
+      "title": "CORS verificado",
+      "detail": "Los dos backends aceptan el origin del frontend."
+    },
+    {
+      "title": "Demo lista",
+      "detail": "Smoke test y guion de demostracion antes de exponer."
+    }
+  ],
+  "demo": {
+    "notes": "Antes de mostrar, correr el smoke de produccion y verificar que las dos APIs sigan vivas."
+  }
+}

@@ -1,0 +1,104 @@
+@startuml
+hide circles
+
+class Campaña {
+  IdCampaña{id}
+  Nombre
+  FechaInicio
+  FechaFin
+  Presupuesto
+  Costo
+  Estado
+  /Roi
+}
+note top of Campaña
+  Estado: Planificada, Activa, Finalizada
+end note
+
+class Lead {
+  IdLead{id}
+  Nombre
+  Estado
+  CampañaOrigen
+}
+note bottom of Lead
+  Estado: Nuevo, Contactado, Calificado, 
+  Convertido en Oportunidad, Perdido
+end note
+
+class Contacto {
+  Email
+  Teléfono
+}
+
+class Producto {
+  Nombre
+  Codigo{id}
+}
+
+class Canal {
+  IdCanal{id}
+  Nombre
+  Tipo
+}
+
+class Oportunidad {
+  IdOportunidad{id}
+  Estado
+  Productos
+  Observaciones
+  MotivoPerdida
+  MontoEsperado
+}
+note bottom of Oportunidad
+  Estado: Nueva, Contactada, 
+  Propuesta, Ganada, Perdida
+end note
+class Cliente {
+  IdCliente{id}
+  Estado
+  MontoGanado
+  FechaTransaccion
+}
+note right of Cliente::Estado
+  Activo, Inactivo
+end note
+
+class Empresa {
+  IdEmpresa{id}
+  Nombre
+  RazonSocial
+  CUIT
+  Direccion
+}
+
+
+Campaña "1..*" ---left--- "1..*" Canal : utiliza >
+Campaña "1" -down- "0..*" Lead : genera >    
+Campaña "1..*" -right- "1..*" Producto : promociona >
+
+Lead "*" -left- "1" Canal : proviene de >
+Lead "1" -left- "1" Contacto : tiene >
+Lead "*" -down- "0..1" Empresa : representa a >
+Lead "1" -down- "0..1" Oportunidad : se convierte en > 
+Lead "0..*" -up- "1..*" Producto : interesado en >
+
+Lead -left- X1
+hide X1
+X1 -right- Oportunidad
+
+Oportunidad "1" -right- "0..1" Cliente : registra >
+Oportunidad "0..*" -down- "1..*" Producto : considera >
+
+
+Cliente -[hidden]up-> Campaña
+Cliente "1" -right- "1..*" Producto : de >
+Lead -[hidden]right-> Oportunidad
+Oportunidad -[hidden]right-> Cliente
+Oportunidad -[hidden]up-> Campaña
+
+Canal -left- X
+hide X
+X -right- Campaña
+
+@enduml
